@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>见面邀请</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Helvetica Neue', sans-serif;
+            touch-action: manipulation;
+        }
+        
+        .meeting-link {
+            font-size: 1.8rem;
+            text-decoration: none;
+            color: #2d3436;
+            padding: 1.2rem 2.5rem;
+            border: 3px solid #2d3436;
+            border-radius: 2rem;
+            transition: all 0.2s;
+            background: rgba(255,255,255,0.9);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .meeting-link:active {
+            transform: scale(0.95);
+            background: #2d3436;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="#meeting" class="meeting-link">要见面吗？</a>
+    
+    <script>
+        // 手机专用点击效果
+        document.querySelector('.meeting-link').addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+        });
+        
+        document.querySelector('.meeting-link').addEventListener('touchend', function() {
+            this.style.transform = 'scale(1)';
+            alert("随时都可以！📱");
+        });
+    </script>
+</body>
+</html>
